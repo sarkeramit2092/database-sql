@@ -60,15 +60,22 @@ docker run -d \
 
   # For ME (Windows)
 
-docker run -d \
-  --name mysql_container \
+docker run --name mysql_container -d \
   -e MYSQL_ROOT_PASSWORD=mypassword \
   -e MYSQL_DATABASE=mydb \
   -e MYSQL_USER=myuser \
   -e MYSQL_PASSWORD=mypassword \
   -v "D:/MySQL Tutorial for Beginners/mysql_data:/var/lib/mysql" \
   -p 3306:3306 \
-  mysql:latest
+  mysql:latest --skip-grant-tables
+
+docker exec -it mysql_container mysql -u root
+
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'mypassword';
+FLUSH PRIVILEGES;
+
+docker restart mysql_container
+
 
 # For DBMS (MySQL Workbench)
 
