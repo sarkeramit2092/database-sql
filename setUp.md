@@ -60,30 +60,47 @@ docker run -d \
 
   # For ME (Windows)
 
-docker run --name mysql_container -d \
-  -e MYSQL_ROOT_PASSWORD=mypassword \
-  -e MYSQL_DATABASE=mydb \
-  -e MYSQL_USER=myuser \
-  -e MYSQL_PASSWORD=mypassword \
-  -v "D:/MySQL Tutorial for Beginners/mysql_data:/var/lib/mysql" \
-  -p 3306:3306 \
-  mysql:latest --skip-grant-tables
+docker run -p 3307:3306 --name my-mysql 
 
-docker exec -it mysql_container mysql -u root
+$ docker exec -it my-mysql bash
 
-ALTER USER 'root'@'localhost' IDENTIFIED BY 'mypassword';
-FLUSH PRIVILEGES;
+bash-5.1# mysql -u root -p -A
+Enter password:
 
-docker restart mysql_container
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 9.2.0 MySQL Community Server - GPL
 
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> select user,host from mysql.user;
++------------------+-----------+
+| user             | host      |
++------------------+-----------+
+| root             | %         |
+| mysql.infoschema | localhost |
+| mysql.session    | localhost |
+| mysql.sys        | localhost |
+| root             | localhost |
++------------------+-----------+
+5 rows in set (0.00 sec)
+
+mysql>
+---------------------------------------------------------------------------------
 
 # For DBMS (MySQL Workbench)
 
 My mySQL docker container is running locally:
 
 IP: 127.0.0.1
-Port: 3306
-User: myuser
-Password: mypassword
+Port: 3307
+User: root
+Password: root
 
-![MySQL Workbench](image-2.png)
+![MySQL Workbenc](image-6.png)
