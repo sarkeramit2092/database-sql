@@ -78,3 +78,5 @@ IP: 127.0.0.1
 Port: 3306
 User: myuser
 Password: mypassword
+
+![MySQL Workbench](image-2.png)
