@@ -1,0 +1,44 @@
+Create a database for your company named xyz.
+Create a table inside this DB to store employee info (id, name and salary).
+Add following information in the DB:
+1, "amit", 50000
+2, "shuvo", 70000
+Select and view all your table data.
+=================================================================================
+CREATE DATBASE IF NOT EXISTS xyz;
+
+USE xyz;
+
+CREATE TABLE employee (
+id INT PRIMARY KEY,
+name VARCHAR (50),
+salary INT
+);
+
+INSERT INTO employee 
+(id,name,salary)
+VALUES
+(1,"amit",50000),
+(2,"ahuvo",70000);
+====================================================================================
+
+CREATE DATABASE IF NOT EXISTS college;
+USE college;
+
+CREATE TABLE student (
+    rollno INT PRIMARY KEY,
+    name VARCHAR(50),
+    marks INT NOT NULL,
+    grade VARCHAR(1),
+    city VARCHAR(20)
+);
+
+INSERT INTO student
+(rollno, name, marks, grade, city)
+VALUES
+(101,"amit",82,"A","Dhaka"),
+(102,"shuvo",90,"A+","Khulna"),
+(103,"mita",95,"A+","Dhaka"),
+(104,"bob",70,"A-","Kolkata"),
+(105,"babu",65,"B","Barisal");
+
