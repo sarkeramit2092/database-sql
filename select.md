@@ -21,6 +21,10 @@ To select all columns from a table, use *:
 
 SELECT * FROM student;
 
+Unique Data (DISTINCT)
+=======================
+SELECT DISTINCT city FROM student;
+
 Using WHERE Clause (Filtering Data)
 ===================================
 The WHERE clause is used to filter records based on conditions.
