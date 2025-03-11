@@ -149,3 +149,13 @@ SELECT * FROM users WHERE permissions & 1 = 1;
   -------+-------+-------+-------+-------
   103    | mita  | 95    | A     | Dhaka
   
+
+
+### 6. Order by Clause
+- To sort in ascending (ASC) or descending order (DESC)
+
+```sql
+    SELECT * FROM student ORDER BY city ASC;
+
+
+

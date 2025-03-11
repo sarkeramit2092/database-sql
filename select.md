@@ -58,11 +58,17 @@ Returns only the first 3 records.
 # Aggregation Functions (COUNT, SUM, AVG, MAX, MIN)
 ===================================================
 SQL provides functions to perform calculations on data.
+Aggregate functions perform a calculation on a set of values, and return a single value.
 
+```sql
+    SELECT max(marks) FROM student;
+    SELECT avg(marks) FROM student;
+    SELECT count(rollno) FROM student;
+```
 Example:
-
+```sql
 SELECT COUNT(*) FROM student;
-
+```
 Returns the total number of students.
 
 # Grouping Data (GROUP BY)
@@ -70,9 +76,9 @@ Returns the total number of students.
 Used to group records that have the same values.
 
 Example:
-
-SELECT city, COUNT(*) FROM student GROUP BY city;
-
+```sql
+SELECT city, COUNT(name) FROM student GROUP BY city;
+```
 Counts students for each city.
 
 # Filtering Grouped Data (HAVING)
@@ -80,9 +86,9 @@ Counts students for each city.
 The HAVING clause filters grouped records.
 
 Example:
-
+```sql
 SELECT grade, COUNT(*) FROM student GROUP BY grade HAVING COUNT(*) > 1;
-
+```
 Returns grades where more than one student has the same grade.
 
 # Joining Tables (JOIN)

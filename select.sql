@@ -30,3 +30,5 @@ SELECT *
 FROM student
 WHERE marks > 80 AND city = "Dhaka";
 
+
+
