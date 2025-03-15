@@ -112,3 +112,7 @@ SELECT *
 FROM employees
 WHERE employee_id != 3;
 
+SELECT * 
+FROM employees
+WHERE hire_date IS NOT NULL;
+
