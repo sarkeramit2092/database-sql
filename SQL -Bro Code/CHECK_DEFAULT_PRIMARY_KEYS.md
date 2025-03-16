@@ -31,11 +31,33 @@ CREATE TABLE worker (
     hourly_pay DECIMAL(5, 2) DEFAULT 15.00,
     hire_date DATE DEFAULT CURRENT_DATE
 );
+
+ALTER TABLE worker
+ALTER hourly_pay SET DEFAULT 15.00;
+
+INSERT INTO worker (employee_id, first_name, last_name) 
+VALUES 
+(2, 'Alice', 'Smith'),
+(3, 'Bob', 'Johnson'),
+(4, 'Emma', 'Williams'),
+(5, 'Michael', 'Brown');
+
 ```
 ### Explanation:
 - `hourly_pay` defaults to `15.00` if no value is given.
 - `hire_date` defaults to the current date.
 
+### Another Example:
+```sql
+CREATE TABLE transactions (
+    transaction_id INT;
+    amount DECIMAL(5,2),
+    transaction_time DATETIME DEFAULT NOW()
+);
+
+INSERT INTO transactions (transaction_id, amount)
+VALUES (1, 4.99);
+```
 ---
 
 ## 3. PRIMARY KEY Constraint
@@ -50,11 +72,16 @@ CREATE TABLE worker (
     hourly_pay DECIMAL(5, 2),
     hire_date DATE
 );
+
+ALTER TABLE worker
+ADD CONSTRAINT
+PRIMARY KEY (employee_id);
 ```
 ### Explanation:
 - `employee_id` is the **PRIMARY KEY**, meaning:
   - It must be unique.
   - It cannot be `NULL`.
+  - A table have only one PRIMARY KEY.
 
 ---
 
