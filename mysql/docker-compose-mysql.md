@@ -274,7 +274,7 @@ services:
                               # ❌ won't restart if you docker compose stop
 ```
 
-> **TL;DR** — `unless-stopped` means *"always keep it running, unless I explicitly tell you to stop."* It's the safest default for production services like MySQL.
+> — `unless-stopped` means *"always keep it running, unless I explicitly tell you to stop."* It's the safest default for production services like MySQL.
 
 ---
 
@@ -411,4 +411,4 @@ Container                    Volume (your machine)
   └── ib_logfile0
 ```
 
-> **TL;DR** — Always use a **named volume** for MySQL data. Never run a database container without one.
+> — Always use a **named volume** for MySQL data. Never run a database container without one.
